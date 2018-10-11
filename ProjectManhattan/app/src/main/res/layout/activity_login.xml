@@ -6,15 +6,16 @@
     tools:context=".ActivityLogin"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="@dimen/layout_padding">
+    android:padding="@dimen/layout_padding"
+    android:theme="@style/LoginTheme">
 
     <ImageView
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_round_ridey"
-        android:maxHeight="150dp"
-        android:maxWidth="150dp"
+        android:maxHeight="@dimen/image_max_h_w"
+        android:maxWidth="@dimen/image_max_h_w"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true" />
 
@@ -59,6 +60,11 @@
         android:background="@android:color/darker_gray"
         android:layout_marginBottom ="10dp"
         android:layout_marginTop ="5dp"/>
+
+    <!--
+    - Google/Facebook Buttons, not implemented
+    - with the APIs, just fo' sho'
+    -->
 
     <Button
         android:text="Sign in with Google"

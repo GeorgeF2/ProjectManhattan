@@ -9,13 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityLogin" android:theme="@style/LoginTheme">
+        <activity
+            android:name=".ActivityLogin"
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ActivitySignIn"
+            android:windowSoftInputMode="stateHidden"></activity>
     </application>
 
 </manifest>

@@ -27,12 +27,14 @@
         android:gravity="center">
 
         <EditText
+            android:id="@+id/activity_login_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/login_email"
             android:inputType="textEmailAddress"/>
 
         <EditText
+            android:id="@+id/activity_login_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/login_password"
@@ -45,17 +47,18 @@
             android:gravity="center">
 
             <Button
-                android:textAllCaps="false"
                 android:id="@+id/activity_login_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textAllCaps="false"
                 android:text="@string/login"/>
 
             <Button
-                android:textAllCaps="false"
+
                 android:id="@+id/activity_login_sign_in_button"
                 android:layout_width="0dp"
+                android:textAllCaps="false"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/sign_in"/>

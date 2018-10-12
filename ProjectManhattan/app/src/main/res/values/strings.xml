@@ -1,10 +1,27 @@
 <resources>
     <string name="app_name">Project Manhattan</string>
+    <string name="login">Log In</string>
     <string name="login_email">Enter your E-mail</string>
     <string name="login_password">Enter your Password</string>
-    <string name="sign_in_email">E-mail to use</string>
-    <string name="sign_in_password">Password to use</string>
-    <string name="confirm_password">Confirm Password</string>
-    <string name="login">Log In</string>
     <string name="sign_in">Sign In</string>
+    <string name="sign_in_email">E-mail to use</string>
+    <string name="sign_in_name">Enter your Name</string>
+    <string name="sign_in_college">Enter your College Name</string>
+    <string name="sign_in_password">Enter your Password</string>
+    <string name="sign_in_confirm_pass">Confirm Password</string>
+    <string name="car_setting">Car</string>
+    <string name="car_setting_explanation">This setting can be changed later.</string>
+    <string name="continue_button">Continue</string>
+
+
+    <string-array name="college_array">
+        <item>ITESO (Instituto Tecnológico de Estudios Superiores de Occidente)</item>
+        <item>Tecnológico de Monterrey</item>
+        <item>Universidad Autónoma de Guadalajara</item>
+        <item>Universidad de Guadalajara</item>
+        <item>Universidad del Valle de Atemajac</item>
+        <item>Universidad del Valle de México</item>
+        <item>Universidad Panamericana</item>
+    </string-array>
+
 </resources>

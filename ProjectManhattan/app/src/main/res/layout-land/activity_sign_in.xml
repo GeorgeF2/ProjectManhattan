@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivitySignIn"
+    android:orientation="vertical"
+    android:padding="@dimen/layout_padding"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/activity_sign_in_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/sign_in_email"
+            android:inputType="textEmailAddress"
+            android:layout_marginVertical="@dimen/layout_padding"/>
+
+        <EditText
+            android:id="@+id/activity_sign_in_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/sign_in_name"
+            android:layout_marginVertical="@dimen/layout_padding"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/activity_sign_in_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/sign_in_password"
+            android:layout_marginVertical="@dimen/layout_padding"
+            android:inputType="textPassword"/>
+
+        <EditText
+            android:id="@+id/activity_sign_in_confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/sign_in_confirm_pass"
+            android:layout_marginVertical="@dimen/layout_padding"
+            android:inputType="textPassword"/>
+
+        <Spinner
+            android:id="@+id/activity_sign_in_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/layout_padding"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_marginVertical="@dimen/layout_padding">
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Car"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/car_setting_explanation"/>
+
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/activity_sign_in_car_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/activity_sign_in_continue"
+            android:text="@string/continue_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+</ScrollView>

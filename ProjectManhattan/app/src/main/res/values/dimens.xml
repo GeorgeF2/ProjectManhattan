@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="layout_padding">10dp</dimen>
-    <dimen name="image_max_h_w">150dp</dimen>
+    <dimen name="layout_sign_in_padding">45dp</dimen>
+    <dimen name="image_max_h_w">200dp</dimen>
 
 </resources>

@@ -12,13 +12,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.Locale;
 
 
 public class ActivityMain extends AppCompatActivity {
 
-    private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     SectionsPagerAdapter sectionPagerAdapter;
@@ -28,11 +30,6 @@ public class ActivityMain extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        toolbar = findViewById(R.id.activity_main_toolbar);
-        setSupportActionBar(toolbar);
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         sectionPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         viewPager = findViewById(R.id.activity_main_view_pager);
@@ -59,9 +56,22 @@ public class ActivityMain extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_choosing,
-                    container, false);
-            return rootView;
+            View rootView;
+            switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
+                case 1:
+                     rootView = inflater.inflate(R.layout.fragment_choosing,
+                        container, false);
+                    return rootView;
+                case 2:
+                    rootView = inflater.inflate(R.layout.fragment_addresses,
+                            container, false);
+                    return rootView;
+                case 3:
+                default:
+                    rootView = inflater.inflate(R.layout.fragment_choosing,
+                            container, false);
+                    return rootView;
+            }
         }
     }
 

@@ -6,8 +6,7 @@
     tools:context=".ActivityLogin"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="@dimen/layout_padding"
-    android:theme="@style/LoginTheme">
+    android:padding="@dimen/layout_padding">
 
     <LinearLayout
         android:layout_width="match_parent"

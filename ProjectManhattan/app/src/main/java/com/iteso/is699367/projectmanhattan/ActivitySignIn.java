@@ -46,9 +46,10 @@ public class ActivitySignIn extends AppCompatActivity {
         continueB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActivitySignIn.this, ActivityMain.class);
+                Intent intent = new Intent(ActivitySignIn.this, ActivityChoosing.class);
                 startActivity(intent);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                finish();
             }
         });
     }

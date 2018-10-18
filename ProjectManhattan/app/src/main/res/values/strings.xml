@@ -19,6 +19,7 @@
     <string name="profile_title">Profile</string>
     <string name="addresses_title">Addresses</string>
     <string name="settings_title">Settings</string>
+    <string name="home_title">Home</string>
 
 
     <string-array name="college_array">

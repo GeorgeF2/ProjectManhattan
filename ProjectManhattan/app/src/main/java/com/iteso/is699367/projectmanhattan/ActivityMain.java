@@ -8,13 +8,10 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -36,6 +33,16 @@ public class ActivityMain extends AppCompatActivity {
         viewPager.setAdapter(sectionPagerAdapter);
         tabLayout = findViewById(R.id.activity_main_tab_layout);
         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_home_black_24dp);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_place_black_24dp);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_person_black_24dp);
+        tabLayout.getTabAt(3).setIcon(R.drawable.ic_settings_black_24dp);
+
+        Bundle extras =  getIntent().getExtras();
+        if (extras != null) {
+            Toast.makeText(this,
+                    extras.getString(ActivityChoosing.ROLE), Toast.LENGTH_SHORT).show();
+        }
     }
 
     public static class PlaceholderFragment extends Fragment{
@@ -59,16 +66,27 @@ public class ActivityMain extends AppCompatActivity {
             View rootView;
             switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
                 case 1:
-                     rootView = inflater.inflate(R.layout.fragment_choosing,
-                        container, false);
-                    return rootView;
+                    Bundle extras =  getActivity().getIntent().getExtras();
+                    if (extras != null) {
+                        if (extras.getString(ActivityChoosing.ROLE) == "Drivey") {
+                            rootView = inflater.inflate(R.layout.fragment_home,
+                                    container, false);
+                        } else {
+                            rootView = inflater.inflate(R.layout.fragment_home,
+                                    container, false);
+                        }
+                        return rootView;
+                    }
                 case 2:
                     rootView = inflater.inflate(R.layout.fragment_addresses,
                             container, false);
                     return rootView;
                 case 3:
+                    rootView = inflater.inflate(R.layout.fragment_profile,
+                            container, false);
+                    return rootView;
                 default:
-                    rootView = inflater.inflate(R.layout.fragment_choosing,
+                    rootView = inflater.inflate(R.layout.fragment_settings,
                             container, false);
                     return rootView;
             }
@@ -85,22 +103,15 @@ public class ActivityMain extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 3;
+            return 4;
         }
 
         @Nullable
         @Override
         public CharSequence getPageTitle(int position) {
-            Locale l = Locale.getDefault();
-            switch (position) {
-                case 0:
-                    return getString(R.string.profile_title);
-                case 1:
-                    return getString(R.string.addresses_title);
-                case 2:
-                    return getString(R.string.settings_title);
-            }
             return null;
         }
+
+
     }
 }

@@ -12,6 +12,14 @@
     <string name="car_setting">Car</string>
     <string name="car_setting_explanation">This setting can be changed later.</string>
     <string name="continue_button">Continue</string>
+    <string name="drivey_button">Drivey</string>
+    <string name="ridey_button">Ridey</string>
+
+
+    <string name="profile_title">Profile</string>
+    <string name="addresses_title">Addresses</string>
+    <string name="settings_title">Settings</string>
+    <string name="home_title">Home</string>
 
 
     <string-array name="college_array">
@@ -23,5 +31,8 @@
         <item>Universidad del Valle de México</item>
         <item>Universidad Panamericana</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

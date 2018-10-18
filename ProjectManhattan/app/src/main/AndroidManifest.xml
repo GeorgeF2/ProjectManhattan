@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ActivityLogin"
-            android:theme="@style/LoginTheme"
+            android:theme="@style/NoActionBarLight"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,8 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivitySignIn"
-            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".ActivitySignIn"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ActivityMain"
+            android:theme="@style/NoActionBarLight"></activity>
+        <activity android:name=".ActivityChoosing"></activity>
     </application>
 
 </manifest>

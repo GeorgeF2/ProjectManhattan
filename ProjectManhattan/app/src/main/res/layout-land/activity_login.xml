@@ -6,8 +6,7 @@
     tools:context=".ActivityLogin"
     android:orientation="horizontal"
     android:gravity="center"
-    android:padding="@dimen/layout_padding"
-    android:theme="@style/LoginTheme">
+    android:padding="@dimen/layout_padding">
 
     <ImageView
         android:layout_gravity="center"

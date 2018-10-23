@@ -13,15 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import java.util.Locale;
-
 
 public class ActivityMain extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
     SectionsPagerAdapter sectionPagerAdapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +30,10 @@ public class ActivityMain extends AppCompatActivity {
         viewPager.setAdapter(sectionPagerAdapter);
         tabLayout = findViewById(R.id.activity_main_tab_layout);
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.getTabAt(0).setIcon(R.drawable.ic_home_black_24dp);
-        tabLayout.getTabAt(1).setIcon(R.drawable.ic_place_black_24dp);
-        tabLayout.getTabAt(2).setIcon(R.drawable.ic_person_black_24dp);
-        tabLayout.getTabAt(3).setIcon(R.drawable.ic_settings_black_24dp);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_home_white_24dp);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_place_white_24dp);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_person_white_24dp);
+        tabLayout.getTabAt(3).setIcon(R.drawable.ic_settings_white_24dp);
 
         Bundle extras =  getIntent().getExtras();
         if (extras != null) {
@@ -45,60 +42,30 @@ public class ActivityMain extends AppCompatActivity {
         }
     }
 
-    public static class PlaceholderFragment extends Fragment{
-
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView;
-            switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
-                case 1:
-                    Bundle extras =  getActivity().getIntent().getExtras();
-                    if (extras != null) {
-                        if (extras.getString(ActivityChoosing.ROLE) == "Drivey") {
-                            rootView = inflater.inflate(R.layout.fragment_home,
-                                    container, false);
-                        } else {
-                            rootView = inflater.inflate(R.layout.fragment_home,
-                                    container, false);
-                        }
-                        return rootView;
-                    }
-                case 2:
-                    rootView = inflater.inflate(R.layout.fragment_addresses,
-                            container, false);
-                    return rootView;
-                case 3:
-                    rootView = inflater.inflate(R.layout.fragment_profile,
-                            container, false);
-                    return rootView;
-                default:
-                    rootView = inflater.inflate(R.layout.fragment_settings,
-                            container, false);
-                    return rootView;
-            }
-        }
-    }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
         public SectionsPagerAdapter(FragmentManager fragmentManager){super(fragmentManager);}
 
         @Override
         public Fragment getItem(int i) {
-            return PlaceholderFragment.newInstance(i + 1);
+            switch(i) {
+                case 0:
+                default:
+                    Bundle extras = new Bundle();
+                    String role = extras.getString(ActivityChoosing.ROLE);
+                    if(role == "Drivey") {
+                        return new FragmentDriveyHome();
+                    }
+                    else {
+                        return new FragmentRideyHome();
+                    }
+                case 1:
+                    return new FragmentAddresses();
+                case 2:
+                    return new FragmentProfile();
+                case 3:
+                    return new FragmentSettings();
+            }
         }
 
         @Override

@@ -16,11 +16,30 @@
     <string name="ridey_button">Ridey</string>
 
 
+    <!--
+    - TabLayout Strings
+    -->
+
     <string name="profile_title">Profile</string>
+    <string name="college_title">College</string>
+    <string name="car_model_title">Car Model</string>
+    <string name="rating_title">Rating</string>
+    <string name="drivey_ridey_ratio_title">Drivey/Ridey Ratio</string>
+
+
     <string name="addresses_title">Addresses</string>
     <string name="settings_title">Settings</string>
     <string name="home_title">Home</string>
 
+    <!--
+    - Addresses CardView Strings
+    -->
+
+    <string name="go_button">Go</string>
+
+    <!--
+    - College Spinner Array String
+    -->
 
     <string-array name="college_array">
         <item>ITESO (Instituto Tecnológico de Estudios Superiores de Occidente)</item>

@@ -7,13 +7,19 @@
     android:padding="@dimen/layout_padding"
     tools:context=".ActivityChoosing">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yes Car"
+        android:labelFor="@id/activity_choose_drivey"
+        android:textAlignment="center"/>
     <Button
         android:id="@+id/activity_choose_drivey"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="@string/drivey_button"
-        android:onClick="onRoleChosen"/>
+        android:onClick="onRoleChosen" />
 
     <Button
         android:id="@+id/activity_choose_ridey"
@@ -22,5 +28,12 @@
         android:layout_weight="1"
         android:text="@string/ridey_button"
         android:onClick="onRoleChosen"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Car"
+        android:labelFor="@id/activity_choose_ridey"
+        android:textAlignment="center"/>
 
 </LinearLayout>

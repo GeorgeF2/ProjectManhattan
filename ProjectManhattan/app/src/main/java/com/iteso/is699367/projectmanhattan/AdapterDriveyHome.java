@@ -1,6 +1,8 @@
 package com.iteso.is699367.projectmanhattan;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.provider.Telephony;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -48,21 +51,31 @@ public class AdapterDriveyHome extends RecyclerView.Adapter<AdapterDriveyHome.Vi
         private RelativeLayout addressLayout;
         private Button addressGo, addressEdit;
         private TextView addressName, addressLocation;
+        private ImageView addressPicture;
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
+        public ViewHolder(View v) {
+            super(v);
             addressLayout = itemView.findViewById(R.id.addresses_layout);
-            addressGo = itemView.findViewById(R.id.addresses_go);
-            addressEdit = itemView.findViewById(R.id.addresses_edit);
+            addressGo = itemView.findViewById(R.id.addresses_go_button);
+            addressEdit = itemView.findViewById(R.id.addresses_edit_button);
             addressName = itemView.findViewById(R.id.addresses_name);
-            //addressLocation = itemView.findViewById(R.id.addre);
+            addressLocation = itemView.findViewById(R.id.addresses_address);
+            addressPicture = itemView.findViewById(R.id.addresses_pictures);
         }
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.addressGo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ActivityFindRideys.class);
+                context.startActivity(intent);
+            }
+        });
         holder.addressName.setText(addresses.get(position).getAddressName());
         holder.addressLocation.setText(addresses.get(position).getAddress());
+        holder.addressPicture.setImageResource(R.drawable.simple_house);
     }
 
     @Override

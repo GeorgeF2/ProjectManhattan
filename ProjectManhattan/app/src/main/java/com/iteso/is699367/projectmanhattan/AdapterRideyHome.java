@@ -42,8 +42,8 @@ public class AdapterRideyHome extends RecyclerView.Adapter<AdapterRideyHome.View
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             addressLayout = itemView.findViewById(R.id.addresses_layout);
-            addressGo = itemView.findViewById(R.id.addresses_go);
-            addressEdit = itemView.findViewById(R.id.addresses_edit);
+            addressGo = itemView.findViewById(R.id.addresses_go_button);
+            addressEdit = itemView.findViewById(R.id.addresses_edit_button);
             addressName = itemView.findViewById(R.id.addresses_name);
             //addressLocation = itemView.findViewById(R.id.addre);
         }

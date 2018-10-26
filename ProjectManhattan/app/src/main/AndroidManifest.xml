@@ -24,8 +24,9 @@
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".ActivityMain"
-            android:theme="@style/NoActionBarLight"></activity>
-        <activity android:name=".ActivityChoosing"></activity>
+            android:theme="@style/NoActionBarLight" />
+        <activity android:name=".ActivityChoosing" />
+        <activity android:name=".ActivityFindRideys"></activity>
     </application>
 
 </manifest>

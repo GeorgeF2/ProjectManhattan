@@ -36,10 +36,18 @@ public class FragmentDriveyHome extends Fragment {
         ArrayList<Addresses> newAddresses = new ArrayList<>();
 
         Addresses address = new Addresses();
-        address.setAddress("Jesús García #3062, Lomas de Providencia, Guadalajara, Jalisco");
+        address.setStreet("Jesús García #3062");
+        address.setCity("Guadalajara");
+        address.setState("Jalisco");
         address.setAddressName("Home");
 
         newAddresses.add(address);
+
+        Addresses address1 = new Addresses();
+        address1.setAddress("Anillo Perif. Sur Manuel Gómez Morín 8585", "Tlaquepaque", "Jalisco");
+
+        newAddresses.add(address);
+        newAddresses.add(address1);
 
         adapter = new AdapterDriveyHome(getActivity(), newAddresses);
         recyclerView.setAdapter(adapter);

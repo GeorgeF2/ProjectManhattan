@@ -19,6 +19,7 @@ public class ActivityMain extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     SectionsPagerAdapter sectionPagerAdapter;
+    private String role;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +38,10 @@ public class ActivityMain extends AppCompatActivity {
 
         Bundle extras =  getIntent().getExtras();
         if (extras != null) {
-            Toast.makeText(this,
-                    extras.getString(ActivityChoosing.ROLE), Toast.LENGTH_SHORT).show();
+            role = extras.getString(ActivityChoosing.ROLE);
+        }
+        else {
+            role = "Drivey";
         }
     }
 
@@ -51,9 +54,7 @@ public class ActivityMain extends AppCompatActivity {
             switch(i) {
                 case 0:
                 default:
-                    Bundle extras = new Bundle();
-                    String role = extras.getString(ActivityChoosing.ROLE);
-                    if(role == "Drivey") {
+                    if(role.equals("Drivey")) {
                         return new FragmentDriveyHome();
                     }
                     else {

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/layout_padding"
+    android:gravity="center"
+    android:id="@+id/fragment_profile"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/fragment_profile_picture"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@android:drawable/sym_def_app_icon"/>
+
+        <TextView
+            android:id="@+id/fragment_profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:text="John Doe"
+            android:layout_marginStart="@dimen/layout_padding" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/layout_padding">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/college_title"
+                android:textSize="30sp"
+                android:padding="@dimen/layout_padding"/>
+            <TextView
+                android:id="@+id/fragment_profile_college"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ITESO (Instituto Tecnológico ..."
+                android:textSize="20sp"
+                android:padding="@dimen/layout_padding"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/car_model_title"
+                android:textSize="30sp"
+                android:padding="@dimen/layout_padding"/>
+            <TextView
+                android:id="@+id/fragment_profile_car_model"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Model/No Car"
+                android:textSize="20sp"
+                android:padding="@dimen/layout_padding"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rating_title"
+                android:textSize="30sp"
+                android:padding="@dimen/layout_padding"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/layout_padding">
+
+                <ImageView
+                    android:id="@+id/fragment_profile_star1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/star_big_on"/>
+                <ImageView
+                    android:id="@+id/fragment_profile_star2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/star_big_on"/>
+                <ImageView
+                    android:id="@+id/fragment_profile_star3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/star_big_on"/>
+                <ImageView
+                    android:id="@+id/fragment_profile_star4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/star_big_on"/>
+                <ImageView
+                    android:id="@+id/fragment_profile_star5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/star_big_on"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/drivey_ridey_ratio_title"
+                android:textSize="30sp"
+                android:padding="@dimen/layout_padding"/>
+            <TextView
+                android:id="@+id/fragment_profile_drivey_ridey_ratio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20/30"
+                android:textSize="20sp"
+                android:padding="@dimen/layout_padding"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

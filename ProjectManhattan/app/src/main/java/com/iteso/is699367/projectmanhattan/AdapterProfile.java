@@ -33,8 +33,8 @@ public class AdapterProfile extends RecyclerView.Adapter<AdapterProfile.ViewHold
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView name, college, ratio, carModel;
-        private ImageView star1, star2, star3, star4, star5, profilePicture;
+        public TextView name, college, ratio, carModel;
+        public ImageView star1, star2, star3, star4, star5, profilePicture;
 
         public ViewHolder(View v) {
             super(v);

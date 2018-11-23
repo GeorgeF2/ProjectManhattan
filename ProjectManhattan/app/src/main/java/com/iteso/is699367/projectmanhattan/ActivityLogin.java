@@ -57,7 +57,10 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     public void updateUI(FirebaseUser currentUser) {
-        Toast.makeText(this, getCurrentUser(),Toast.LENGTH_LONG).show();
+        if (currentUser != null){
+            Intent intent = new Intent(this, ActivityChoosing.class);
+            startActivity(intent);
+        }
 
     }
 
@@ -73,14 +76,14 @@ public class ActivityLogin extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(null, "signInWithEmail:success");
+                            Toast.makeText(ActivityLogin.this, "User signed in", Toast.LENGTH_LONG).show();
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(null, "signInWithEmail:failure", task.getException());
                             Toast.makeText(ActivityLogin.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
+                                    Toast.LENGTH_LONG).show();
                         }
 
                         // ...
@@ -94,12 +97,15 @@ public class ActivityLogin extends AppCompatActivity {
             //createAccount(email.getText().toString(), password.getText().toString());
         } else if (i == R.id.activity_login_button) {
            signIn(email.getText().toString(), password.getText().toString());
-        } //else if (i == R.id.signOutButton) {
+        } //else if (i == R.id.fragment_settings_sign_out) {
 //            signOut();
 //        } else if (i == R.id.verifyEmailButton) {
 //            sendEmailVerification();
 //        }
     }
+
+
+
 
     public String getCurrentUser() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

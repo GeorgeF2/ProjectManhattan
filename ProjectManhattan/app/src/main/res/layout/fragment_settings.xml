@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.RecyclerView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="vertical"
-    android:id="@+id/fragment_settings_recycler_view"
-    android:scrollbarStyle="outsideOverlay">
-</android.support.v7.widget.RecyclerView>
+    android:orientation="vertical"
+    android:padding="@dimen/layout_sign_in_padding"
+    android:gravity="center">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Out"
+        android:id="@+id/fragment_settings_sign_out"
+        android:onClick="onClick"/>
+
+</LinearLayout>

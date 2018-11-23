@@ -60,40 +60,11 @@ public class ActivitySignIn extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 createAccount(email.getText().toString(), password.getText().toString());
-                Intent intent = new Intent(ActivitySignIn.this, ActivityChoosing.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|
-                                Intent.FLAG_ACTIVITY_NEW_TASK|
-                                Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
             }
         });
     }
 
-    public void updateUI(FirebaseUser currentUser) {
-        Toast.makeText(this, getCurrentUser(),Toast.LENGTH_LONG).show();
 
-    }
-
-    public String getCurrentUser() {
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            // Name, email address, and profile photo Url
-            String name = user.getDisplayName();
-            String email = user.getEmail();
-            Uri photoUrl = user.getPhotoUrl();
-
-            // Check if user's email is verified
-            boolean emailVerified = user.isEmailVerified();
-
-            // The user's ID, unique to the Firebase project. Do NOT use this value to
-            // authenticate with your backend server, if you have one. Use
-            // FirebaseUser.getIdToken() instead.
-            String uid = user.getUid();
-
-            return "Name: " + name + "\nEmail: " + email + "\nId: " + uid;
-        }
-        return "no user";
-    }
 
     public void createAccount(String email, String password){
         if (!validateForm()) {
@@ -108,14 +79,13 @@ public class ActivitySignIn extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(null, "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+                            Intent intent = new Intent(ActivitySignIn.this, ActivityChoosing.class);
+                            startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(null, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(ActivitySignIn.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
+                                    Toast.LENGTH_LONG).show();
                         }
 
                         // ...

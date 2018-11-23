@@ -1,4 +1,4 @@
-package com.iteso.is699367.projectmanhattan;
+package com.iteso.is699367.projectmanhattan.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -6,13 +6,12 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
+import com.iteso.is699367.projectmanhattan.Adapters.AdapterProfile;
+import com.iteso.is699367.projectmanhattan.R;
 import com.iteso.is699367.projectmanhattan.beans.User;
 
 
@@ -39,7 +38,7 @@ public class FragmentProfile extends Fragment {
         user.setName("Jorge Pérez");
         user.setHasCar(true);
         user.setCollege("ITESO (Instituto Tecnológico de Estudios Superiores de Occidente)");
-        user.setCarModel("Toyota Yaris 2014");
+        user.setCarModel("Toyota Yaris 2015");
 
         mAdapter = new AdapterProfile(getActivity(), user);
         recyclerView.setAdapter(mAdapter);

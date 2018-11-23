@@ -8,10 +8,12 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
+
+import com.iteso.is699367.projectmanhattan.Fragments.FragmentAddresses;
+import com.iteso.is699367.projectmanhattan.Fragments.FragmentDriveyHome;
+import com.iteso.is699367.projectmanhattan.Fragments.FragmentProfile;
+import com.iteso.is699367.projectmanhattan.Fragments.FragmentRideyHome;
+import com.iteso.is699367.projectmanhattan.Fragments.FragmentSettings;
 
 
 public class ActivityMain extends AppCompatActivity {

@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="@dimen/layout_padding"
     android:gravity="center"
     android:id="@+id/fragment_profile"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_weight="1">
 
         <ImageView
             android:id="@+id/fragment_profile_picture"
@@ -30,94 +33,95 @@
 
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/layout_padding">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/college_title"
-                android:textSize="30sp"
-                android:padding="@dimen/layout_padding"/>
-            <TextView
-                android:id="@+id/fragment_profile_college"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ITESO (Instituto Tecnológico ..."
-                android:textSize="20sp"
-                android:padding="@dimen/layout_padding"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/car_model_title"
-                android:textSize="30sp"
-                android:padding="@dimen/layout_padding"/>
-            <TextView
-                android:id="@+id/fragment_profile_car_model"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Model/No Car"
-                android:textSize="20sp"
-                android:padding="@dimen/layout_padding"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/rating_title"
-                android:textSize="30sp"
-                android:padding="@dimen/layout_padding"/>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="@dimen/layout_padding">
 
-                <ImageView
-                    android:id="@+id/fragment_profile_star1"
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@android:drawable/star_big_on"/>
-                <ImageView
-                    android:id="@+id/fragment_profile_star2"
+                    android:text="@string/college_title"
+                    android:textSize="30sp"
+                    android:padding="@dimen/layout_padding"/>
+                <TextView
+                    android:id="@+id/fragment_profile_college"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@android:drawable/star_big_on"/>
-                <ImageView
-                    android:id="@+id/fragment_profile_star3"
+                    android:text="ITESO (Instituto Tecnológico ..."
+                    android:textSize="20sp"
+                    android:padding="@dimen/layout_padding"/>
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@android:drawable/star_big_on"/>
-                <ImageView
-                    android:id="@+id/fragment_profile_star4"
+                    android:text="@string/car_model_title"
+                    android:textSize="30sp"
+                    android:padding="@dimen/layout_padding"/>
+                <TextView
+                    android:id="@+id/fragment_profile_car_model"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@android:drawable/star_big_on"/>
-                <ImageView
-                    android:id="@+id/fragment_profile_star5"
+                    android:text="Model/No Car"
+                    android:textSize="20sp"
+                    android:padding="@dimen/layout_padding"/>
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@android:drawable/star_big_on"/>
+                    android:text="@string/rating_title"
+                    android:textSize="30sp"
+                    android:padding="@dimen/layout_padding"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/layout_padding">
+
+                    <ImageView
+                        android:id="@+id/fragment_profile_star1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@android:drawable/star_big_on"/>
+                    <ImageView
+                        android:id="@+id/fragment_profile_star2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@android:drawable/star_big_on"/>
+                    <ImageView
+                        android:id="@+id/fragment_profile_star3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@android:drawable/star_big_on"/>
+                    <ImageView
+                        android:id="@+id/fragment_profile_star4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@android:drawable/star_big_on"/>
+                    <ImageView
+                        android:id="@+id/fragment_profile_star5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@android:drawable/star_big_on"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/drivey_ridey_ratio_title"
+                    android:textSize="30sp"
+                    android:padding="@dimen/layout_padding"/>
+                <TextView
+                    android:id="@+id/fragment_profile_drivey_ridey_ratio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20/30"
+                    android:textSize="20sp"
+                    android:padding="@dimen/layout_padding"/>
             </LinearLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/drivey_ridey_ratio_title"
-                android:textSize="30sp"
-                android:padding="@dimen/layout_padding"/>
-            <TextView
-                android:id="@+id/fragment_profile_drivey_ridey_ratio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="20/30"
-                android:textSize="20sp"
-                android:padding="@dimen/layout_padding"/>
-        </LinearLayout>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
+
 </LinearLayout>

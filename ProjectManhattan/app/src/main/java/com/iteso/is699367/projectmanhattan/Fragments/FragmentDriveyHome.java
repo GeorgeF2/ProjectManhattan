@@ -1,4 +1,4 @@
-package com.iteso.is699367.projectmanhattan;
+package com.iteso.is699367.projectmanhattan.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.iteso.is699367.projectmanhattan.Adapters.AdapterDriveyHome;
+import com.iteso.is699367.projectmanhattan.R;
 import com.iteso.is699367.projectmanhattan.beans.Addresses;
 
 import java.util.ArrayList;

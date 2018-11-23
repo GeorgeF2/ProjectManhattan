@@ -37,6 +37,7 @@
 
     <string name="go_button">Go</string>
     <string name="edit_button">Edit</string>
+    <string name="delete_button">Delete</string>
 
     <!--
     - College Spinner Array String

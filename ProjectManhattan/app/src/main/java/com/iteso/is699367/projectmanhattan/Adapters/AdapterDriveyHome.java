@@ -1,9 +1,7 @@
-package com.iteso.is699367.projectmanhattan;
+package com.iteso.is699367.projectmanhattan.Adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.provider.Telephony;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,10 +12,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.iteso.is699367.projectmanhattan.ActivityFindRideys;
+import com.iteso.is699367.projectmanhattan.R;
 import com.iteso.is699367.projectmanhattan.beans.Addresses;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 /*
@@ -41,7 +40,7 @@ public class AdapterDriveyHome extends RecyclerView.Adapter<AdapterDriveyHome.Vi
     @Override
     public AdapterDriveyHome.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).
-                inflate(R.layout.addresses, viewGroup, false);
+                inflate(R.layout.addresses_drivey, viewGroup, false);
         AdapterDriveyHome.ViewHolder vh = new AdapterDriveyHome.ViewHolder(v);
         return vh;
     }

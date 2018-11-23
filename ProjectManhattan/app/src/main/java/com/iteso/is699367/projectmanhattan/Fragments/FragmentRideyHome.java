@@ -1,4 +1,4 @@
-package com.iteso.is699367.projectmanhattan;
+package com.iteso.is699367.projectmanhattan.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

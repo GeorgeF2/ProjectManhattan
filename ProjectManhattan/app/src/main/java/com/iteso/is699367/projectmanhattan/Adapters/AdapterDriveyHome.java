@@ -54,7 +54,7 @@ public class AdapterDriveyHome extends RecyclerView.Adapter<AdapterDriveyHome.Vi
 
         public ViewHolder(View v) {
             super(v);
-            addressLayout = itemView.findViewById(R.id.addresses_layout);
+            addressLayout = itemView.findViewById(R.id.addresses_drivey_layout);
             addressGo = itemView.findViewById(R.id.addresses_go_button);
             addressEdit = itemView.findViewById(R.id.addresses_edit_button);
             addressName = itemView.findViewById(R.id.addresses_name);

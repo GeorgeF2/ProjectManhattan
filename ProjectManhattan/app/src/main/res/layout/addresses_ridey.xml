@@ -9,11 +9,11 @@
     android:scrollbarStyle="outsideOverlay"
     app:cardCornerRadius="4dp">
     <RelativeLayout
-        android:id="@+id/addresses_layout"
+        android:id="@+id/addresses_ridey_layout"
         android:layout_width="match_parent"
         android:layout_height="280dp">
         <ImageView
-            android:id="@+id/addresses_pictures"
+            android:id="@+id/addresses_ridey_pictures"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:scaleType="centerInside"
@@ -21,17 +21,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/addresses_pictures"
+            android:layout_below="@id/addresses_ridey_pictures"
             android:orientation="vertical"
             android:layout_margin="@dimen/layout_padding">
             <TextView
-                android:id="@+id/addresses_name"
+                android:id="@+id/addresses_ridey_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="THIS WILL CHANGE ON THE FLY"
                 />
             <TextView
-                android:id="@+id/addresses_address"
+                android:id="@+id/addresses_ridey_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="HOPEFULLY WHEN THIS ACTUALLY APPEARS, THEN THIS WILL CHANGE"/>
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <Button
-                    android:id="@+id/addresses_go_button"
+                    android:id="@+id/addresses_ridey_go_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/go_button"
@@ -50,7 +50,7 @@
 
                     />
                 <Button
-                    android:id="@+id/addresses_edit_button"
+                    android:id="@+id/addresses_ridey_edit_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/edit_button"

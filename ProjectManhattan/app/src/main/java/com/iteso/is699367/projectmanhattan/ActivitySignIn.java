@@ -39,6 +39,7 @@ public class ActivitySignIn extends AppCompatActivity {
         password = findViewById(R.id.activity_sign_in_password);
         confirmPass = findViewById(R.id.activity_sign_in_confirm_password);
         continueB = findViewById(R.id.activity_sign_in_continue);
+        mAuth = FirebaseAuth.getInstance();
 
         collegeSpinner = findViewById(R.id.activity_sign_in_spinner);
 

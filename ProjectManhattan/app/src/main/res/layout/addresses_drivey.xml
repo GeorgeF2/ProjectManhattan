@@ -9,7 +9,7 @@
     android:scrollbarStyle="outsideOverlay"
     app:cardCornerRadius="4dp">
     <RelativeLayout
-        android:id="@+id/addresses_layout"
+        android:id="@+id/addresses_drivey_layout"
         android:layout_width="match_parent"
         android:layout_height="280dp">
         <ImageView

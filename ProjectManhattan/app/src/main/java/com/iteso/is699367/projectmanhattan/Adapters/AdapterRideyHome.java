@@ -29,7 +29,7 @@ public class AdapterRideyHome extends RecyclerView.Adapter<AdapterRideyHome.View
     @Override
     public AdapterRideyHome.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).
-                inflate(R.layout.addresses_drivey, viewGroup, false);
+                inflate(R.layout.addresses_ridey, viewGroup, false);
         AdapterRideyHome.ViewHolder vh = new AdapterRideyHome.ViewHolder(v);
         return vh;
     }
@@ -42,10 +42,10 @@ public class AdapterRideyHome extends RecyclerView.Adapter<AdapterRideyHome.View
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            addressLayout = itemView.findViewById(R.id.addresses_layout);
-            addressGo = itemView.findViewById(R.id.addresses_go_button);
-            addressEdit = itemView.findViewById(R.id.addresses_edit_button);
-            addressName = itemView.findViewById(R.id.addresses_name);
+            addressLayout = itemView.findViewById(R.id.addresses_ridey_layout);
+            addressGo = itemView.findViewById(R.id.addresses_ridey_go_button);
+            addressEdit = itemView.findViewById(R.id.addresses_ridey_edit_button);
+            addressName = itemView.findViewById(R.id.addresses_ridey_name);
             //addressLocation = itemView.findViewById(R.id.addre);
         }
     }
@@ -53,7 +53,7 @@ public class AdapterRideyHome extends RecyclerView.Adapter<AdapterRideyHome.View
     @Override
     public void onBindViewHolder(@NonNull AdapterRideyHome.ViewHolder holder, int position) {
         holder.addressName.setText(addresses.get(position).getAddressName());
-        holder.addressLocation.setText(addresses.get(position).getAddress());
+        //holder.addressLocation.setText(addresses.get(position).getAddress());
     }
 
     @Override

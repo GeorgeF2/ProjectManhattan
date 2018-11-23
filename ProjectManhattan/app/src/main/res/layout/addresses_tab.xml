@@ -9,7 +9,7 @@
     android:scrollbarStyle="outsideOverlay"
     app:cardCornerRadius="4dp">
     <RelativeLayout
-        android:id="@+id/addresses_layout"
+        android:id="@+id/addresses_tab_layout"
         android:layout_width="match_parent"
         android:layout_height="280dp">
         <ImageView
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <Button
-                    android:id="@+id/addresses_go_button"
+                    android:id="@+id/addresses_tab_edit_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/edit_button"
@@ -49,7 +49,7 @@
                     android:textColor="#03A9F4"
                     />
                 <Button
-                    android:id="@+id/addresses_edit_button"
+                    android:id="@+id/addresses_tab_delete_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/delete_button"

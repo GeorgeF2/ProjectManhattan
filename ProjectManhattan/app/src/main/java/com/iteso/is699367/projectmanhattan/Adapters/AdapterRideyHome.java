@@ -1,4 +1,4 @@
-package com.iteso.is699367.projectmanhattan;
+package com.iteso.is699367.projectmanhattan.Adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.iteso.is699367.projectmanhattan.R;
 import com.iteso.is699367.projectmanhattan.beans.Addresses;
 
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class AdapterRideyHome extends RecyclerView.Adapter<AdapterRideyHome.View
     @Override
     public AdapterRideyHome.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).
-                inflate(R.layout.addresses, viewGroup, false);
+                inflate(R.layout.addresses_drivey, viewGroup, false);
         AdapterRideyHome.ViewHolder vh = new AdapterRideyHome.ViewHolder(v);
         return vh;
     }
@@ -42,8 +43,8 @@ public class AdapterRideyHome extends RecyclerView.Adapter<AdapterRideyHome.View
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             addressLayout = itemView.findViewById(R.id.addresses_layout);
-            addressGo = itemView.findViewById(R.id.addresses_go);
-            addressEdit = itemView.findViewById(R.id.addresses_edit);
+            addressGo = itemView.findViewById(R.id.addresses_go_button);
+            addressEdit = itemView.findViewById(R.id.addresses_edit_button);
             addressName = itemView.findViewById(R.id.addresses_name);
             //addressLocation = itemView.findViewById(R.id.addre);
         }

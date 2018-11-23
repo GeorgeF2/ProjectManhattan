@@ -1,4 +1,4 @@
-package com.iteso.is699367.projectmanhattan;
+package com.iteso.is699367.projectmanhattan.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.iteso.is699367.projectmanhattan.Adapters.AdapterDriveyHome;
+import com.iteso.is699367.projectmanhattan.R;
 import com.iteso.is699367.projectmanhattan.beans.Addresses;
 
 import java.util.ArrayList;
@@ -36,10 +38,18 @@ public class FragmentDriveyHome extends Fragment {
         ArrayList<Addresses> newAddresses = new ArrayList<>();
 
         Addresses address = new Addresses();
-        address.setAddress("Jesús García #3062, Lomas de Providencia, Guadalajara, Jalisco");
+        address.setStreet("Jesús García #3062");
+        address.setCity("Guadalajara");
+        address.setState("Jalisco");
         address.setAddressName("Home");
 
         newAddresses.add(address);
+
+        Addresses address1 = new Addresses();
+        address1.setAddress("Anillo Perif. Sur Manuel Gómez Morín 8585", "Tlaquepaque", "Jalisco");
+
+        newAddresses.add(address);
+        newAddresses.add(address1);
 
         adapter = new AdapterDriveyHome(getActivity(), newAddresses);
         recyclerView.setAdapter(adapter);

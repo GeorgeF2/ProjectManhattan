@@ -8,10 +8,12 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
+
+import com.iteso.is699367.projectmanhattan.Fragments.FragmentAddresses;
+import com.iteso.is699367.projectmanhattan.Fragments.FragmentDriveyHome;
+import com.iteso.is699367.projectmanhattan.Fragments.FragmentProfile;
+import com.iteso.is699367.projectmanhattan.Fragments.FragmentRideyHome;
+import com.iteso.is699367.projectmanhattan.Fragments.FragmentSettings;
 
 
 public class ActivityMain extends AppCompatActivity {
@@ -19,6 +21,7 @@ public class ActivityMain extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     SectionsPagerAdapter sectionPagerAdapter;
+    private String role;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +40,10 @@ public class ActivityMain extends AppCompatActivity {
 
         Bundle extras =  getIntent().getExtras();
         if (extras != null) {
-            Toast.makeText(this,
-                    extras.getString(ActivityChoosing.ROLE), Toast.LENGTH_SHORT).show();
+            role = extras.getString(ActivityChoosing.ROLE);
+        }
+        else {
+            role = "Drivey";
         }
     }
 
@@ -51,9 +56,7 @@ public class ActivityMain extends AppCompatActivity {
             switch(i) {
                 case 0:
                 default:
-                    Bundle extras = new Bundle();
-                    String role = extras.getString(ActivityChoosing.ROLE);
-                    if(role == "Drivey") {
+                    if(role.equals("Drivey")) {
                         return new FragmentDriveyHome();
                     }
                     else {

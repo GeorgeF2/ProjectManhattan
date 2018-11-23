@@ -1,4 +1,4 @@
-package com.iteso.is699367.projectmanhattan;
+package com.iteso.is699367.projectmanhattan.Adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.iteso.is699367.projectmanhattan.R;
 import com.iteso.is699367.projectmanhattan.beans.User;
 
 public class AdapterProfile extends RecyclerView.Adapter<AdapterProfile.ViewHolder> {
@@ -33,8 +34,8 @@ public class AdapterProfile extends RecyclerView.Adapter<AdapterProfile.ViewHold
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView name, college, ratio, carModel;
-        private ImageView star1, star2, star3, star4, star5, profilePicture;
+        public TextView name, college, ratio, carModel;
+        public ImageView star1, star2, star3, star4, star5, profilePicture;
 
         public ViewHolder(View v) {
             super(v);
@@ -60,7 +61,7 @@ public class AdapterProfile extends RecyclerView.Adapter<AdapterProfile.ViewHold
         viewHolder.star1.setImageResource(android.R.drawable.star_on);
         viewHolder.star2.setImageResource(android.R.drawable.star_on);
         viewHolder.star3.setImageResource(android.R.drawable.star_on);
-        viewHolder.star4.setImageResource(android.R.drawable.star_on);
+        viewHolder.star4.setImageResource(android.R.drawable.star_big_on);
         viewHolder.star5.setImageResource(android.R.drawable.star_off);
     }
 

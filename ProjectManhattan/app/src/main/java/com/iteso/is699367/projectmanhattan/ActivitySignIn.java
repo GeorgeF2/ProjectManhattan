@@ -80,6 +80,7 @@ public class ActivitySignIn extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(null, "createUserWithEmail:success");
                             Intent intent = new Intent(ActivitySignIn.this, ActivityChoosing.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.

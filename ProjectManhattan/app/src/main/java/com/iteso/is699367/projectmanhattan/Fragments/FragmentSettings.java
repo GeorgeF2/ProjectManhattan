@@ -44,6 +44,7 @@ public class FragmentSettings extends Fragment {
             public void onClick(View v) {
                 signOut();
                 Intent intent = new Intent(getContext(), ActivityLogin.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
         });

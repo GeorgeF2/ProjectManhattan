@@ -59,6 +59,7 @@ public class ActivityLogin extends AppCompatActivity {
     public void updateUI(FirebaseUser currentUser) {
         if (currentUser != null){
             Intent intent = new Intent(this, ActivityChoosing.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         }
 

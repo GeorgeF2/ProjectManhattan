@@ -1,5 +1,6 @@
 package com.iteso.is699367.projectmanhattan.Fragments;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -23,6 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.iteso.is699367.projectmanhattan.Adapters.AdapterProfile;
 import com.iteso.is699367.projectmanhattan.R;
 import com.iteso.is699367.projectmanhattan.beans.User;
+import com.squareup.picasso.Picasso;
 
 
 public class FragmentProfile extends Fragment {
@@ -40,7 +42,7 @@ public class FragmentProfile extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        FirebaseUser authUser = FirebaseAuth.getInstance().getCurrentUser();
+        final FirebaseUser authUser = FirebaseAuth.getInstance().getCurrentUser();
         String uid = authUser.getUid();
         DatabaseReference fbUser = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
         final User user = new User();
@@ -49,11 +51,14 @@ public class FragmentProfile extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
-                user.setName(dataSnapshot.child("Name").getValue().toString());
+                user.setName(dataSnapshot.child("name").getValue().toString());
                 user.setHasCar(true);
-                user.setCollege(dataSnapshot.child("Collage").getValue().toString());
-                user.setCarModel(dataSnapshot.child("Car").getValue().toString());
-                setRating(Integer.valueOf(dataSnapshot.child("Rating").getValue().toString()));
+                user.setCollege(dataSnapshot.child("college").getValue().toString());
+                user.setCarModel(dataSnapshot.child("carModel").getValue().toString());
+                if (dataSnapshot.hasChild("rating"))
+                    setRating(Integer.valueOf(dataSnapshot.child("rating").getValue().toString()));
+                else
+                    FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("rating").setValue("0");
 
                 name.setText(user.getName());
                 college.setText(user.getCollege());
@@ -73,6 +78,8 @@ public class FragmentProfile extends Fragment {
         college = view.findViewById(R.id.fragment_profile_college);
         ratio = view.findViewById(R.id.fragment_profile_drivey_ridey_ratio);
         carModel = view.findViewById(R.id.fragment_profile_car_model);
+        profilePicture = view.findViewById(R.id.fragment_profile_picture);
+        Picasso.with(this.getContext()).load(authUser.getPhotoUrl()).into(profilePicture);
         star1 = view.findViewById(R.id.fragment_profile_star1);
         star2 = view.findViewById(R.id.fragment_profile_star2);
         star3 = view.findViewById(R.id.fragment_profile_star3);

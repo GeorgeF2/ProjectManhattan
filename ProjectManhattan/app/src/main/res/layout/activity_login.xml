@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/activity_login"
     android:layout_height="match_parent"
     tools:context=".ActivityLogin"
     android:orientation="vertical"
@@ -75,13 +76,12 @@
     - with the APIs, just fo' sho'
     -->
 
-    <Button
-        android:text="Sign in with Google"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:onClick="onClick"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#DB4437" />
+        android:layout_height="wrap_content" />
+
 
     <Button
         android:text="Sign in with Facebook"

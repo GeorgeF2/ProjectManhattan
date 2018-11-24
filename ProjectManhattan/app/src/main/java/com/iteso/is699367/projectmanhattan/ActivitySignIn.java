@@ -19,6 +19,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.iteso.is699367.projectmanhattan.beans.User;
 
 import java.util.Comparator;
 
@@ -62,6 +65,10 @@ public class ActivitySignIn extends AppCompatActivity {
                 createAccount(email.getText().toString(), password.getText().toString());
             }
         });
+
+
+
+
     }
 
 
@@ -79,6 +86,7 @@ public class ActivitySignIn extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(null, "createUserWithEmail:success");
+                            createUser();
                             Intent intent = new Intent(ActivitySignIn.this, ActivityChoosing.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
@@ -93,6 +101,20 @@ public class ActivitySignIn extends AppCompatActivity {
                     }
                 });
     }
+
+    public void createUser(){
+        FirebaseUser FBuser = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+        String userId = FBuser.getUid();
+
+        // creating user object
+        User user = new User(name.getText().toString(), collegeSpinner.getSelectedItem().toString(), "Placeholde", true);
+
+        // pushing user to ‘users’ node using theuserid
+        database.child("Users").child(userId).setValue(user);
+    }
+
+
 
     private boolean validateForm() {
         boolean valid = true;

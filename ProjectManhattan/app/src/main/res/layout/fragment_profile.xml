@@ -106,21 +106,6 @@
                     android:src="@android:drawable/star_big_on"/>
             </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/drivey_ridey_ratio_title"
-                android:textSize="30sp"
-                android:padding="@dimen/layout_padding"/>
-
-            <TextView
-                android:id="@+id/fragment_profile_drivey_ridey_ratio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="20/30"
-                android:textSize="20sp"
-                android:padding="@dimen/layout_padding"/>
-
         </LinearLayout>
 
     </LinearLayout>

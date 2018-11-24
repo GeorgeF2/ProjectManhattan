@@ -4,36 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="@dimen/layout_padding"
     tools:context=".ActivityChoosing">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Yes Car"
-        android:labelFor="@id/activity_choose_drivey"
-        android:textAlignment="center"/>
     <Button
         android:id="@+id/activity_choose_drivey"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:layout_weight="1"
         android:text="@string/drivey_button"
-        android:onClick="onRoleChosen" />
+        android:onClick="onRoleChosen"
+        android:layout_margin="@dimen/layout_padding"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimaryDark"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/activity_choosing_drivey_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Drivey: Yes Car"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:id="@+id/activity_choosing_help_image"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/question"
+            android:layout_weight="1"
+            android:maxHeight="40dp"
+            android:maxWidth="40dp"
+            android:adjustViewBounds="true"
+            android:onClick="appearHelp"
+            android:layout_marginEnd="@dimen/layout_padding"
+            android:layout_marginStart="@dimen/layout_padding"/>
+
+        <TextView
+            android:id="@+id/activity_choosing_ridey_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="textEnd"
+            android:text="Ridey: No car"
+            android:visibility="gone"/>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/activity_choose_ridey"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:layout_weight="1"
         android:text="@string/ridey_button"
-        android:onClick="onRoleChosen"/>
+        android:onClick="onRoleChosen"
+        android:layout_margin="@dimen/layout_padding"
+        android:background="@color/colorAccent"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="No Car"
-        android:labelFor="@id/activity_choose_ridey"
-        android:textAlignment="center"/>
 
 </LinearLayout>

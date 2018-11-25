@@ -1,14 +1,15 @@
 package com.iteso.is699367.projectmanhattan.beans;
 
+import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 
 public class User implements Parcelable {
 
-    private String name, college, carModel, profilePicture;
+    private String name, college, carModel;
     private boolean hasCar;
 
-    public User(String name, String college, String carModel, String profilePicture, boolean hasCar) {
+    public User(String name, String college, String carModel, boolean hasCar) {
         this.name = name;
         this.college = college;
         if(hasCar) {
@@ -17,7 +18,6 @@ public class User implements Parcelable {
         else {
             this.carModel = "None";
         }
-        this.profilePicture = profilePicture;
         this.hasCar = hasCar;
     }
 
@@ -25,7 +25,6 @@ public class User implements Parcelable {
         name = in.readString();
         college = in.readString();
         carModel = in.readString();
-        profilePicture = in.readString();
         hasCar = in.readByte() != 0;
     }
 
@@ -66,13 +65,6 @@ public class User implements Parcelable {
         this.carModel = carModel;
     }
 
-    public String getProfilePicture() {
-        return profilePicture;
-    }
-
-    public void setProfilePicture(String profilePicture) {
-        this.profilePicture = profilePicture;
-    }
 
     public boolean isHasCar() {
         return hasCar;
@@ -95,7 +87,6 @@ public class User implements Parcelable {
         dest.writeString(name);
         dest.writeString(college);
         dest.writeString(carModel);
-        dest.writeString(profilePicture);
         dest.writeByte((byte) (hasCar ? 1 : 0));
     }
 }

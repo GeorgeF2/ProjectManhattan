@@ -55,9 +55,7 @@ public class ActivityAddAddresses extends AppCompatActivity {
 
     }
     private void returnTo() {
-        Intent intent = new Intent(this, ActivityMain.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
+        finish();
     }
 
     private void addAddress(){

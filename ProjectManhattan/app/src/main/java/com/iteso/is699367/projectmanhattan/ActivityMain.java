@@ -36,7 +36,6 @@ public class ActivityMain extends AppCompatActivity {
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_home_white_24dp);
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_place_white_24dp);
         tabLayout.getTabAt(2).setIcon(R.drawable.ic_person_white_24dp);
-        tabLayout.getTabAt(3).setIcon(R.drawable.ic_settings_white_24dp);
 
         Bundle extras =  getIntent().getExtras();
         if (extras != null) {
@@ -66,14 +65,12 @@ public class ActivityMain extends AppCompatActivity {
                     return new FragmentAddresses();
                 case 2:
                     return new FragmentProfile();
-                case 3:
-                    return new FragmentSettings();
             }
         }
 
         @Override
         public int getCount() {
-            return 4;
+            return 3;
         }
 
         @Nullable

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityAddAddresses"
+    android:orientation="vertical"
+    android:padding="@dimen/layout_padding"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/layout_sign_in_padding">
+
+        <EditText
+            android:id="@+id/activity_add_addresses_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/layout_padding"
+            android:hint="Address Nickname"/>
+        <EditText
+            android:id="@+id/activity_add_addresses_street"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Street"/>
+        <EditText
+            android:id="@+id/activity_add_addresses_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="City"/>
+        <EditText
+            android:id="@+id/activity_add_addresses_state"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:hint="State"/>
+        <Button
+            android:id="@+id/activity_add_addresses_done"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Done" />
+        <Button
+            android:id="@+id/activity_add_addresses_cancel"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Cancel"/>
+
+    </LinearLayout>
+</ScrollView>

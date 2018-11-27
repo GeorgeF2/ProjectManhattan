@@ -1,44 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ActivityAddAddresses"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:gravity="center"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="@dimen/layout_sign_in_padding">
 
     <EditText
         android:id="@+id/activity_add_addresses_nickname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Address Nickname"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginVertical="@dimen/layout_padding"
+        android:hint="Address Nickname"/>
     <EditText
         android:id="@+id/activity_add_addresses_street"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Street"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginVertical="@dimen/layout_padding"
+        android:hint="Street"/>
     <EditText
         android:id="@+id/activity_add_addresses_city"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="City"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginVertical="@dimen/layout_padding"
+        android:hint="City"/>
     <EditText
         android:id="@+id/activity_add_addresses_state"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="State"
-        android:layout_marginBottom="40dp"/>
+        android:layout_marginVertical="@dimen/layout_padding"
+        android:hint="State"/>
     <Button
         android:id="@+id/activity_add_addresses_done"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/layout_padding"
         android:text="Done" />
     <Button
         android:id="@+id/activity_add_addresses_cancel"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/layout_padding"
         android:text="Cancel"/>
 
 </LinearLayout>

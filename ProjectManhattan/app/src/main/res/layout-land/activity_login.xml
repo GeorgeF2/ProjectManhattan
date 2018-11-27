@@ -70,13 +70,16 @@
             android:layout_marginBottom ="10dp"
             android:layout_marginTop ="5dp"/>
 
-        <Button
-            android:text="Sign in with Google"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white"
+        <!--
+     - Google/Facebook Buttons, not implemented
+     - with the APIs, just fo' sho'
+     -->
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:onClick="onClick"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#DB4437" />
+            android:layout_height="wrap_content" />
 
         <Button
             android:text="Sign in with Facebook"

@@ -28,7 +28,8 @@
         <activity android:name=".ActivityChoosing" />
         <activity android:name=".ActivityFindRideys" />
         <activity android:name=".ActivityAddAddresses" />
-        <activity android:name=".ActivityEditProfile"></activity>
+        <activity android:name=".ActivityEditProfile" />
+        <activity android:name=".ActivityEditAddress"></activity>
     </application>
 
 </manifest>

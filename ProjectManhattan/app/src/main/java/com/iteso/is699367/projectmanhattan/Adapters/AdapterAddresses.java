@@ -98,6 +98,34 @@ public class AdapterAddresses extends RecyclerView.Adapter<AdapterAddresses.View
 
             }
         });
+
+        holder.addressEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                myRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                            if (snapshot.child("addressName").getValue().toString().contains(addresses.get(position).getAddressName())){
+                                String addrId = snapshot.getKey();
+                                //send addrId trough intent
+                            }
+                        }
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError error) {
+                        // Failed to read value
+                        Log.w(TAG, "Failed to read value.", error.toException());
+                    }
+                });
+
+            }
+        });
         holder.addressName.setText(addresses.get(position).getAddressName());
         holder.addressLocation.setText(addresses.get(position).getAddress());
         holder.addressPicture.setImageResource(R.drawable.simple_house);

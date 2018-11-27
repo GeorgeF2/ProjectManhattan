@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/activity_edit_address_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Address Nickname"
+        android:layout_marginBottom="20dp"/>
+    <EditText
+        android:id="@+id/activity_edit_address_street"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Street"
+        android:layout_marginBottom="20dp"/>
+    <EditText
+        android:id="@+id/activity_edit_address_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="City"
+        android:layout_marginBottom="20dp"/>
+    <EditText
+        android:id="@+id/activity_edit_address_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="State"
+        android:layout_marginBottom="40dp"/>
+    <Button
+        android:id="@+id/activity_edit_address_done"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Done" />
+    <Button
+        android:id="@+id/activity_edit_address_cancel"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Cancel"/>
+
+</LinearLayout>

@@ -10,8 +10,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,8 +27,9 @@ import java.util.Comparator;
 public class ActivitySignIn extends AppCompatActivity {
 
     private Spinner collegeSpinner;
-    private EditText email, name, password, confirmPass;
+    private EditText email, name, password, confirmPass, carModel;
     private Button continueB;
+    private Switch hasCar;
     private FirebaseAuth mAuth;
 
     @Override
@@ -39,6 +42,8 @@ public class ActivitySignIn extends AppCompatActivity {
         password = findViewById(R.id.activity_sign_in_password);
         confirmPass = findViewById(R.id.activity_sign_in_confirm_password);
         continueB = findViewById(R.id.activity_sign_in_continue);
+        carModel = findViewById(R.id.activity_sign_in_car_model);
+        hasCar = findViewById(R.id.activity_sign_in_car_switch);
         mAuth = FirebaseAuth.getInstance();
 
         collegeSpinner = findViewById(R.id.activity_sign_in_spinner);
@@ -62,9 +67,20 @@ public class ActivitySignIn extends AppCompatActivity {
                 createAccount(email.getText().toString(), password.getText().toString());
             }
         });
+
+
+        hasCar.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    carModel.setVisibility(View.VISIBLE);
+                } else {
+                    carModel.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+
     }
-
-
 
     public void createAccount(String email, String password){
         if (!validateForm()) {

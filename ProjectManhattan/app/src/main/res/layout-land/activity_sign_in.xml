@@ -81,9 +81,17 @@
             <Switch
                 android:id="@+id/activity_sign_in_car_switch"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
+
+        <EditText
+            android:id="@+id/activity_sign_in_car_model"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/layout_padding"
+            android:hint="Car Model"
+            android:visibility="gone"/>
 
         <Button
             android:id="@+id/activity_sign_in_continue"

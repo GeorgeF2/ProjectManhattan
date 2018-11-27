@@ -72,12 +72,6 @@ public class ActivitySignIn extends AppCompatActivity {
         });
 
 
-
-
-
-    }
-
-
         hasCar.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -88,7 +82,6 @@ public class ActivitySignIn extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     public void createAccount(String email, String password){

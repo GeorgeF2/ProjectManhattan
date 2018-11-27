@@ -1,6 +1,7 @@
 package com.iteso.is699367.projectmanhattan.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -19,6 +20,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.iteso.is699367.projectmanhattan.ActivityEditAddress;
+import com.iteso.is699367.projectmanhattan.ActivityLogin;
+import com.iteso.is699367.projectmanhattan.ActivitySignIn;
+import com.iteso.is699367.projectmanhattan.Fragments.FragmentAddresses;
 import com.iteso.is699367.projectmanhattan.R;
 import com.iteso.is699367.projectmanhattan.beans.Addresses;
 
@@ -83,6 +88,37 @@ public class AdapterAddresses extends RecyclerView.Adapter<AdapterAddresses.View
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                             if (snapshot.child("addressName").getValue().toString().contains(addresses.get(position).getAddressName())){
                                 myRef.child(snapshot.getKey()).setValue(null);
+                            }
+                        }
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError error) {
+                        // Failed to read value
+                        Log.w(TAG, "Failed to read value.", error.toException());
+                    }
+                });
+
+            }
+        });
+
+        holder.addressEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                myRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                            if (snapshot.child("addressName").getValue().toString().contains(addresses.get(position).getAddressName())){
+                                String addrId = snapshot.getKey();
+                                //send addrId trough intent
+                                Intent intent = new Intent(context, ActivityEditAddress.class);
+                                intent.putExtra("ADDRID", addrId);
+                                context.startActivity(intent);
                             }
                         }
 

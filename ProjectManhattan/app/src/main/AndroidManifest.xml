@@ -33,6 +33,9 @@
         <activity
             android:name=".ActivityEditProfile"
             android:windowSoftInputMode="stateHidden"></activity>
+        <activity android:name=".ActivityAddAddresses" />
+        <activity android:name=".ActivityEditProfile" />
+        <activity android:name=".ActivityEditAddress"></activity>
     </application>
 
 </manifest>

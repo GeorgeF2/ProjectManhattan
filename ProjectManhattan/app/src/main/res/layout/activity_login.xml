@@ -83,13 +83,4 @@
         android:layout_height="wrap_content" />
 
 
-    <Button
-        android:text="Sign in with Facebook"
-        android:textAllCaps="false"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#3B5998"
-        android:textColor="@android:color/white"
-        android:layout_marginTop="10dp"/>
-
 </LinearLayout>

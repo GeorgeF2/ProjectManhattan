@@ -13,7 +13,6 @@ import com.iteso.is699367.projectmanhattan.Fragments.FragmentAddresses;
 import com.iteso.is699367.projectmanhattan.Fragments.FragmentDriveyHome;
 import com.iteso.is699367.projectmanhattan.Fragments.FragmentProfile;
 import com.iteso.is699367.projectmanhattan.Fragments.FragmentRideyHome;
-import com.iteso.is699367.projectmanhattan.Fragments.FragmentSettings;
 
 
 public class ActivityMain extends AppCompatActivity {

@@ -7,26 +7,38 @@
 
 
     <EditText
+        android:id="@+id/activity_add_addresses_nickname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Address Nickname"/>
+        android:hint="Address Nickname"
+        android:layout_marginBottom="20dp"/>
     <EditText
+        android:id="@+id/activity_add_addresses_street"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Full Address"
-        android:layout_marginBottom="40dp"/>
-    <ImageView
-        android:layout_width="250dp"
-        android:layout_height="150dp"
-        android:src="@drawable/ic_launcher_background"
+        android:hint="Street"
+        android:layout_marginBottom="20dp"/>
+    <EditText
+        android:id="@+id/activity_add_addresses_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="City"
+        android:layout_marginBottom="20dp"/>
+    <EditText
+        android:id="@+id/activity_add_addresses_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="State"
         android:layout_marginBottom="40dp"/>
     <Button
+        android:id="@+id/activity_add_addresses_done"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="Done"/>
+        android:text="Done" />
     <Button
+        android:id="@+id/activity_add_addresses_cancel"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="Add Another Address"/>
+        android:text="Cancel"/>
 
 </LinearLayout>

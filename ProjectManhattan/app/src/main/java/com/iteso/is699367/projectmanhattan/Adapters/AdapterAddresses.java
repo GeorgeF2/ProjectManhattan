@@ -3,6 +3,7 @@ package com.iteso.is699367.projectmanhattan.Adapters;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,15 +11,27 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.iteso.is699367.projectmanhattan.R;
 import com.iteso.is699367.projectmanhattan.beans.Addresses;
 
 import java.util.ArrayList;
 
+import static android.support.constraint.Constraints.TAG;
+
 public class AdapterAddresses extends RecyclerView.Adapter<AdapterAddresses.ViewHolder>{
 
     private ArrayList<Addresses> addresses;
     private Context context;
+    DatabaseReference myRef;
+    FirebaseUser user;
 
     public AdapterAddresses(Context context, ArrayList<Addresses> myDataSet) {
         addresses = myDataSet;
@@ -31,6 +44,11 @@ public class AdapterAddresses extends RecyclerView.Adapter<AdapterAddresses.View
         View v = LayoutInflater.from(viewGroup.getContext()).
                 inflate(R.layout.addresses_tab, viewGroup, false);
         AdapterAddresses.ViewHolder vh = new AdapterAddresses.ViewHolder(v);
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        myRef = FirebaseDatabase.getInstance().getReference().child("Users").child(user.getUid()).child("Addresses");
+
+
         return vh;
     }
 
@@ -58,10 +76,25 @@ public class AdapterAddresses extends RecyclerView.Adapter<AdapterAddresses.View
             @Override
             public void onClick(View v) {
 
-                Addresses addr = addresses.get(position);
-                addresses.remove(position);
-                notifyItemRemoved(position);
-                notifyItemRangeChanged(position, addresses.size());
+                myRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                            if (snapshot.child("addressName").getValue().toString().contains(addresses.get(position).getAddressName())){
+                                myRef.child(snapshot.getKey()).setValue(null);
+                            }
+                        }
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError error) {
+                        // Failed to read value
+                        Log.w(TAG, "Failed to read value.", error.toException());
+                    }
+                });
 
             }
         });

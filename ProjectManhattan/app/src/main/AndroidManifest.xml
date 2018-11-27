@@ -27,7 +27,8 @@
             android:theme="@style/NoActionBarLight" />
         <activity android:name=".ActivityChoosing" />
         <activity android:name=".ActivityFindRideys" />
-        <activity android:name=".ActivityAddAddresses"></activity>
+        <activity android:name=".ActivityAddAddresses" />
+        <activity android:name=".ActivityEditProfile"></activity>
     </application>
 
 </manifest>

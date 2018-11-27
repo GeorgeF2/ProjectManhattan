@@ -106,6 +106,17 @@
                     android:src="@android:drawable/star_big_on"/>
             </LinearLayout>
 
+            <Button
+                android:id="@+id/fragment_profile_edit"
+                android:text="Edit Profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/fragment_profile_sign_out"
+                android:text="Sign Out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
         </LinearLayout>
 
     </LinearLayout>

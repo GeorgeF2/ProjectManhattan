@@ -3,6 +3,7 @@ package com.iteso.is699367.projectmanhattan;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -59,6 +60,9 @@ public class ActivityAddAddresses extends AppCompatActivity {
     }
 
     private void addAddress(){
+        if (!validateForm())
+            return;
+
         String userId = user.getUid();
         String AddId = myRef.child("Users").child(userId).child("Addresses").push().getKey();
 
@@ -67,5 +71,41 @@ public class ActivityAddAddresses extends AppCompatActivity {
         myRef.child("Users").child(userId).child("Addresses").child(AddId).setValue(address);
 
        returnTo();
+    }
+
+    private boolean validateForm() {
+        boolean valid = true;
+
+        String nicknames = nickname.getText().toString();
+        if (TextUtils.isEmpty(nicknames)) {
+            nickname.setError("Required.");
+            valid = false;
+        } else {
+            nickname.setError(null);
+        }
+
+        String streets = street.getText().toString();
+        if (TextUtils.isEmpty(streets)) {
+            street.setError("Required.");
+            valid = false;
+        } else {
+            street.setError(null);
+        }
+        String citys = city.getText().toString();
+        if (TextUtils.isEmpty(citys)) {
+            city.setError("Required.");
+            valid = false;
+        } else {
+            city.setError(null);
+        }
+        String states = state.getText().toString();
+        if (TextUtils.isEmpty(states)) {
+            state.setError("Required.");
+            valid = false;
+        } else {
+            state.setError(null);
+        }
+
+        return valid;
     }
 }

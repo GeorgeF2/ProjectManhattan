@@ -37,6 +37,7 @@ public class AdapterAddresses extends RecyclerView.Adapter<AdapterAddresses.View
     private Context context;
     DatabaseReference myRef;
     FirebaseUser user;
+    String delId = "placeholder";
 
     public AdapterAddresses(Context context, ArrayList<Addresses> myDataSet) {
         addresses = myDataSet;
@@ -87,7 +88,7 @@ public class AdapterAddresses extends RecyclerView.Adapter<AdapterAddresses.View
 
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                             if (snapshot.child("addressName").getValue().toString().contains(addresses.get(position).getAddressName())){
-                                myRef.child(snapshot.getKey()).setValue(null);
+                                delId = snapshot.getKey();
                             }
                         }
 
@@ -100,6 +101,7 @@ public class AdapterAddresses extends RecyclerView.Adapter<AdapterAddresses.View
                         Log.w(TAG, "Failed to read value.", error.toException());
                     }
                 });
+                myRef.child(delId).setValue(null);
 
             }
         });

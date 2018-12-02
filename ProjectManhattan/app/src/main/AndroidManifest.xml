@@ -29,11 +29,12 @@
         <activity android:name=".ActivityFindRideys" />
         <activity
             android:name=".ActivityAddAddresses"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".ActivityEditProfile"
-            android:windowSoftInputMode="stateHidden"></activity>
-        <activity android:name=".ActivityEditAddress"></activity>
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".ActivityEditAddress" />
+        <activity android:name=".ActivityRydersGotten"></activity>
     </application>
 
 </manifest>

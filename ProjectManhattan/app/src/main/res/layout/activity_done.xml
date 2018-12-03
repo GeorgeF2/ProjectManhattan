@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".ActivityDone">
+    <TextView
+        android:layout_marginTop="35dp"
+        android:id="@+id/activity_done_name"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please meet the following at ride place:" />
+    <TextView
+        android:layout_marginTop="35dp"
+        android:id="@+id/activity_done_car"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Person 1, person 2, perosn 3." />
+    <TextView
+        android:layout_marginTop="35dp"
+        android:textSize="30sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enjoy yor Ryde!!!" />
+    <ImageView
+        android:id="@+id/activity_done_logo"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:scaleX=".7"
+        android:scaleY=".7"
+        android:src="@drawable/ic_round_ridey"/>
+    <Button
+        android:id="@+id/activity_done_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel"/>
+
+</LinearLayout>

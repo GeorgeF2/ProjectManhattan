@@ -39,7 +39,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ActivityStart" />
-        <activity android:name=".ActivityWait"></activity>
+        <activity android:name=".ActivityWait" />
+        <activity android:name=".ActivityDone"></activity>
     </application>
 
 </manifest>

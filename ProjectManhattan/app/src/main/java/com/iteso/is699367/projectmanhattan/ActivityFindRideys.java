@@ -17,7 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ActivityFindRideys extends AppCompatActivity {
 
-    private Button cancel;
+    private Button cancel, sd;
     private TextView rydersGotten;
     private int totalSeats, remSeats;
     DatabaseReference database;
@@ -30,6 +30,7 @@ public class ActivityFindRideys extends AppCompatActivity {
         database = FirebaseDatabase.getInstance().getReference().child("Rydes");
 
         cancel = findViewById(R.id.activity_find_ridey_cancel_button);
+        sd = findViewById(R.id.activity_find_done);
         rydersGotten = findViewById(R.id.activity_find_ridey_ryders_seats);
         Bundle extras =  getIntent().getExtras();
         if (extras != null) {
@@ -63,6 +64,14 @@ public class ActivityFindRideys extends AppCompatActivity {
                 Intent intent = new Intent(ActivityFindRideys.this, ActivityChoosing.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        sd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityFindRideys.this, ActivityDone.class);
+                startActivity(intent);
             }
         });
 

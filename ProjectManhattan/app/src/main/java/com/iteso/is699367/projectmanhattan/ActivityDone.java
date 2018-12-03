@@ -1,8 +1,10 @@
 package com.iteso.is699367.projectmanhattan;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -22,8 +24,9 @@ public class ActivityDone extends AppCompatActivity {
         setContentView(R.layout.activity_done);
 
         done = findViewById(R.id.activity_done_car);
+        cancel = findViewById(R.id.activity_done_cancel);
 
-        FirebaseDatabase.getInstance().getReference().child("Rydes").child(FirebaseAuth.getInstance().getUid()).addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference().child("Rydes").child(FirebaseAuth.getInstance().getUid()).child("Ryders").addValueEventListener(new ValueEventListener() {
             String names = "";
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -38,5 +41,18 @@ public class ActivityDone extends AppCompatActivity {
 
             }
         });
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cancel();
+            }
+        });
+    }
+    private void cancel(){
+        FirebaseDatabase.getInstance().getReference().child("Rydes").child(FirebaseAuth.getInstance().getUid()).setValue(null);
+        Intent intent = new Intent(this, ActivityChoosing.class);
+        startActivity(intent);
+        finish();
     }
 }

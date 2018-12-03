@@ -13,11 +13,6 @@
             android:name=".ActivityLogin"
             android:theme="@style/NoActionBarLight"
             android:windowSoftInputMode="stateHidden">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ActivitySignIn"
@@ -34,7 +29,17 @@
             android:name=".ActivityEditProfile"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".ActivityEditAddress" />
-        <activity android:name=".ActivityRydersGotten"></activity>
+        <activity android:name=".ActivityRydersGotten" />
+        <activity android:name=".ActivitySplashScreen"
+            android:theme="@style/NoActionBarLight">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

@@ -50,7 +50,6 @@ public class AdapterDriveyHome extends RecyclerView.Adapter<AdapterDriveyHome.Vi
         private RelativeLayout addressLayout;
         private Button addressGo;
         private TextView addressName, addressLocation;
-        private ImageView addressPicture;
 
         public ViewHolder(View v) {
             super(v);
@@ -58,7 +57,6 @@ public class AdapterDriveyHome extends RecyclerView.Adapter<AdapterDriveyHome.Vi
             addressGo = itemView.findViewById(R.id.addresses_go_button);
             addressName = itemView.findViewById(R.id.addresses_name);
             addressLocation = itemView.findViewById(R.id.addresses_address);
-            addressPicture = itemView.findViewById(R.id.addresses_pictures);
         }
     }
 
@@ -75,7 +73,7 @@ public class AdapterDriveyHome extends RecyclerView.Adapter<AdapterDriveyHome.Vi
         });
         holder.addressName.setText(addresses.get(position).getAddressName());
         holder.addressLocation.setText(addresses.get(position).getAddress());
-        holder.addressPicture.setImageResource(R.drawable.simple_house);
+//        holder.addressPicture.setImageResource(R.drawable.simple_house);
     }
 
 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ActivityWait">
+
+    <TextView
+        android:layout_marginTop="35dp"
+        android:id="@+id/activity_wait_name"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please wait for name at rides location" />
+    <TextView
+        android:layout_marginTop="35dp"
+        android:id="@+id/activity_wait_car"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="His car is xxxx" />
+    <TextView
+        android:layout_marginTop="35dp"
+        android:textSize="30sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enjoy yor Ryde!!!" />
+    <ImageView
+        android:id="@+id/activity_wait_logo"
+        android:layout_width="wrap_content"
+        android:scaleX=".7"
+        android:scaleY=".7"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_round_ridey"/>
+
+</LinearLayout>

@@ -141,7 +141,7 @@ public class AdapterAddresses extends RecyclerView.Adapter<AdapterAddresses.View
         });
         holder.addressName.setText(addresses.get(position).getAddressName());
         holder.addressLocation.setText(addresses.get(position).getAddress());
-        holder.addressPicture.setImageResource(R.drawable.simple_house);
+//        holder.addressPicture.setImageResource(R.drawable.simple_house);
     }
 
     @Override

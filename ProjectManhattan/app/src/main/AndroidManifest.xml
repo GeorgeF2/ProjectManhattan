@@ -12,7 +12,7 @@
         <activity
             android:name=".ActivityLogin"
             android:theme="@style/NoActionBarLight"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".ActivitySignIn"
             android:windowSoftInputMode="stateHidden" />
@@ -38,7 +38,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityStart"></activity>
+        <activity android:name=".ActivityStart" />
+        <activity android:name=".ActivityWait"></activity>
     </application>
 
 </manifest>

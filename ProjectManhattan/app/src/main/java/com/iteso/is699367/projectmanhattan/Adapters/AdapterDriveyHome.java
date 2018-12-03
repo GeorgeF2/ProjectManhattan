@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.iteso.is699367.projectmanhattan.ActivityFindRideys;
+import com.iteso.is699367.projectmanhattan.ActivityStart;
 import com.iteso.is699367.projectmanhattan.R;
 import com.iteso.is699367.projectmanhattan.beans.Addresses;
 
@@ -48,7 +48,7 @@ public class AdapterDriveyHome extends RecyclerView.Adapter<AdapterDriveyHome.Vi
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         private RelativeLayout addressLayout;
-        private Button addressGo, addressEdit;
+        private Button addressGo;
         private TextView addressName, addressLocation;
         private ImageView addressPicture;
 
@@ -56,7 +56,6 @@ public class AdapterDriveyHome extends RecyclerView.Adapter<AdapterDriveyHome.Vi
             super(v);
             addressLayout = itemView.findViewById(R.id.addresses_drivey_layout);
             addressGo = itemView.findViewById(R.id.addresses_go_button);
-            addressEdit = itemView.findViewById(R.id.addresses_edit_button);
             addressName = itemView.findViewById(R.id.addresses_name);
             addressLocation = itemView.findViewById(R.id.addresses_address);
             addressPicture = itemView.findViewById(R.id.addresses_pictures);
@@ -64,11 +63,13 @@ public class AdapterDriveyHome extends RecyclerView.Adapter<AdapterDriveyHome.Vi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         holder.addressGo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, ActivityFindRideys.class);
+
+                Intent intent = new Intent(context, ActivityStart.class);
+                intent.putExtra("where", addresses.get(position).getAddressName());
                 context.startActivity(intent);
             }
         });
@@ -76,6 +77,7 @@ public class AdapterDriveyHome extends RecyclerView.Adapter<AdapterDriveyHome.Vi
         holder.addressLocation.setText(addresses.get(position).getAddress());
         holder.addressPicture.setImageResource(R.drawable.simple_house);
     }
+
 
     @Override
     public int getItemCount() {

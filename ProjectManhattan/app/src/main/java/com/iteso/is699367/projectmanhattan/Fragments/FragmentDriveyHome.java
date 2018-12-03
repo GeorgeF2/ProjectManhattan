@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -18,7 +19,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.iteso.is699367.projectmanhattan.Adapters.AdapterAddresses;
 import com.iteso.is699367.projectmanhattan.Adapters.AdapterDriveyHome;
 import com.iteso.is699367.projectmanhattan.R;
 import com.iteso.is699367.projectmanhattan.beans.Addresses;
@@ -33,6 +33,7 @@ public class FragmentDriveyHome extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     DatabaseReference myRef;
     FirebaseUser user;
+    public FragmentManager tfm;
 
     public FragmentDriveyHome() {}
 
@@ -44,6 +45,7 @@ public class FragmentDriveyHome extends Fragment {
 
         final RecyclerView recyclerView = view.findViewById(R.id.fragment_drivey_home_recycler_view);
         recyclerView.setHasFixedSize(true);
+        tfm = this.getFragmentManager();
 
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
@@ -75,4 +77,6 @@ public class FragmentDriveyHome extends Fragment {
         });
         return view;
     }
+
+
 }

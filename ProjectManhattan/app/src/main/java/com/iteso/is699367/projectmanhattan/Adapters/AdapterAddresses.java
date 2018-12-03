@@ -89,6 +89,9 @@ public class AdapterAddresses extends RecyclerView.Adapter<AdapterAddresses.View
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                             if (snapshot.child("addressName").getValue().toString().contains(addresses.get(position).getAddressName())){
                                 delId = snapshot.getKey();
+                                myRef.child(delId).setValue(null);
+                                delId = "placeholder";
+
                             }
                         }
 

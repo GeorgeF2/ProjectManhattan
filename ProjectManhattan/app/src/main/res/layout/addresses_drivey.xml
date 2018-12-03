@@ -49,14 +49,6 @@
                     android:textColor="#03A9F4"
 
                     />
-                <Button
-                    android:id="@+id/addresses_edit_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/edit_button"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:textColor="@android:color/black"
-                    />
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>

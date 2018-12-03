@@ -20,6 +20,8 @@
         android:layout_marginTop="35dp"
         android:id="@+id/activity_wait_car"
         android:textSize="20sp"
+
+        android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="His car is xxxx" />
@@ -31,10 +33,15 @@
         android:text="Enjoy yor Ryde!!!" />
     <ImageView
         android:id="@+id/activity_wait_logo"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:scaleX=".7"
         android:scaleY=".7"
-        android:layout_height="wrap_content"
         android:src="@drawable/ic_round_ridey"/>
+    <Button
+        android:id="@+id/activity_wait_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel"/>
 
 </LinearLayout>

@@ -3,6 +3,8 @@ package com.iteso.is699367.projectmanhattan;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -14,6 +16,8 @@ import com.google.firebase.database.ValueEventListener;
 public class ActivityWait extends AppCompatActivity {
 
     private TextView name, car;
+    private Button cancel;
+    String sid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,7 @@ public class ActivityWait extends AppCompatActivity {
 
         name = findViewById(R.id.activity_wait_name);
         car = findViewById(R.id.activity_wait_car);
+        cancel = findViewById(R.id.activity_wait_cancel);
 
 
         Bundle extras =  getIntent().getExtras();
@@ -31,6 +36,7 @@ public class ActivityWait extends AppCompatActivity {
         }
 
         final String id = rydeId;
+        sid = rydeId;
 
         FirebaseDatabase.getInstance().getReference().addValueEventListener(new ValueEventListener() {
             @Override
@@ -50,6 +56,17 @@ public class ActivityWait extends AppCompatActivity {
             }
         });
 
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cancel();
+            }
+        });
 
+
+    }
+    private void cancel(){
+        FirebaseDatabase.getInstance().getReference().child("Rydes").child(sid).child("Ryders").child(FirebaseAuth.getInstance().getUid()).setValue(null);
+        finish();
     }
 }
